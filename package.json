@@ -8,6 +8,6 @@
         "type": "git",
         "url": "git://github.com/romac/parsec.js.git"
     },
-    "main": "./lib/parsec",
+    "main": "./index.js",
     "dependencies": {}
 }
