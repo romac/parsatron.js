@@ -1,7 +1,8 @@
 
 var parsec = require( '..' );
 
-var instruction;
+var instruction, bf,
+    HELLO = '++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++.>+.+++++++..+++.';
 
 instruction = parsec.choice(
     parsec.char( '>' ),
@@ -19,6 +20,6 @@ instruction = parsec.choice(
     )
 );
 
-var bf = parsec.many( instruction );
+bf = parsec.many( instruction );
 
-console.log( parsec.run( bf, '+--.>++[-<]' ) );
+console.log( parsec.run( bf, HELLO ) );
