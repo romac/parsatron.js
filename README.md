@@ -38,5 +38,7 @@ Output:
 
 As you can see, the API is far from elegant and could be greatly improved, by the use of [macros](http://sweetjs.org), or Promises/A. It's something I'll maybe consider if I keep working on the library.
 
+In the meantime, if you want to play with parser combinators in JavaScript, I encourage you the check out [Parsimmon](https://github.com/jayferd/parsimmon).
+
 ## License ##
 Parsec.js is distributed under the [BSD license](http://opensource.org/licenses/bsd-license)
