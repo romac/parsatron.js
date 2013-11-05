@@ -1,24 +1,24 @@
 
-var parsec = require( '..' );
+var p = require( '..' );
 
 var instruction, bf;
 
-instruction = parsec.choice(
-    parsec.char( '>' ),
-    parsec.char( '<' ),
-    parsec.char( '+' ),
-    parsec.char( '-' ),
-    parsec.char( '.' ),
-    parsec.char( ',' ),
-    parsec.between(
-        parsec.char( '[' ), parsec.char( ']' ),
-        parsec.many( function()
+instruction = p.choice(
+    p.char( '>' ),
+    p.char( '<' ),
+    p.char( '+' ),
+    p.char( '-' ),
+    p.char( '.' ),
+    p.char( ',' ),
+    p.between(
+        p.char( '[' ), p.char( ']' ),
+        p.many( function()
         {
             return instruction.apply( this, arguments );
         } )
     )
 );
 
-bf = parsec.many( instruction );
+bf = p.many( instruction );
 
-console.log( parsec.run( bf, '+[>>+<-]>++.' ) );
+console.log( p.run( bf, '+[>>+<-]>++.' ) );

@@ -1,33 +1,33 @@
-# Parsec.js #
-Parsec.js is a straightforward port to JavaScript of Nate Young's [Parsatron](https://github.com/youngnh/parsatron), a Clojure parser combinator library, which is itself a port of Haskell's Parsec library.
+# Parsatron.js #
+Parsatron.js is a bad and incomplete port to JavaScript of Nate Young's [Parsatron](https://github.com/youngnh/parsatron), a Clojure parser combinator library, which is itself a port of Haskell's Parsec library.
 
 ## Example ##
-Here is a Brainfuck parser written using Parsec.js:
+Here is a Brainfuck parser written using Parsatron.js:
 
 ```js
-var parsec = require( '..' );
+var p = require( 'parsatron' );
 
 var instruction, bf;
 
-instruction = parsec.choice(
-    parsec.char( '>' ),
-    parsec.char( '<' ),
-    parsec.char( '+' ),
-    parsec.char( '-' ),
-    parsec.char( '.' ),
-    parsec.char( ',' ),
-    parsec.between(
-        parsec.char( '[' ), parsec.char( ']' ),
-        parsec.many( function()
+instruction = p.choice(
+    p.char( '>' ),
+    p.char( '<' ),
+    p.char( '+' ),
+    p.char( '-' ),
+    p.char( '.' ),
+    p.char( ',' ),
+    p.between(
+        p.char( '[' ), p.char( ']' ),
+        p.many( function()
         {
             return instruction.apply( this, arguments );
         } )
     )
 );
 
-bf = parsec.many( instruction );
+bf = p.many( instruction );
 
-console.log( parsec.run( bf, '+[>>+<-]>++.' ) );
+console.log( p.run( bf, '+[>>+<-]>++.' ) );
 ```
 
 Output:
@@ -38,7 +38,10 @@ Output:
 
 As you can see, the API is far from elegant and could be greatly improved, by the use of [macros](http://sweetjs.org), or Promises/A. It's something I'll maybe consider if I keep working on the library.
 
-In the meantime, if you want to play with parser combinators in JavaScript, I encourage you the check out [Parsimmon](https://github.com/jayferd/parsimmon).
+In the meantime, if you need a serious parser combinators library in JavaScript, I encourage you the check out [Parsimmon](https://github.com/jayferd/parsimmon).
+
+## Caveats
+Amongst other things, this library is missing a `map` method that would let us transform the value yielded by a parser.
 
 ## License ##
-Parsec.js is distributed under the [BSD license](http://opensource.org/licenses/bsd-license)
+Parsatron.js is distributed under the [BSD license](http://opensource.org/licenses/bsd-license)

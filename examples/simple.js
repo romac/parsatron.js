@@ -1,10 +1,10 @@
 
-var parsec = require( '..' );
+var p = require( '..' );
 
-var p = parsec.between(
-    parsec.char( 'a' ),
-    parsec.char( 'b' ),
-    parsec.many( parsec.char( 'c' ) )
+var parser = p.between(
+    p.char( 'a' ),
+    p.char( 'b' ),
+    p.many( p.char( 'c' ) )
 );
 
-console.log( parsec.run( p, 'accccb' ) );
+console.log( p.run( parser, 'accccb' ) );

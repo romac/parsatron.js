@@ -1,2 +1,2 @@
 
-module.exports = require( './lib/parsec' );
+module.exports = require( './lib/parsatron' );

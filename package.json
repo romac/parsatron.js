@@ -1,12 +1,12 @@
 {
-    "name": "parsec.js",
+    "name": "parsatron.js",
     "version": "0.1.0",
     "description": "Parser combinators library for JavaScript",
-    "keywords": [ "parser", "combinator" ],
+    "keywords": [ "parser", "combinator", "parsec", "parsatron" ],
     "author": "Romain Ruetschi <romain.ruetschi@gmail.com>",
     "repository": {
         "type": "git",
-        "url": "git://github.com/romac/parsec.js.git"
+        "url": "git://github.com/romac/parsatron.js.git"
     },
     "main": "./index.js",
     "dependencies": {}
