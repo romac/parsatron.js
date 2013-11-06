@@ -1,3 +1,5 @@
+**If you're looking for a proper parser combinators library in JavaScript, I encourage you the check out [Parsimmon](https://github.com/jayferd/parsimmon).**
+
 # Parsatron.js #
 Parsatron.js is a bad and incomplete port to JavaScript of Nate Young's [Parsatron](https://github.com/youngnh/parsatron), a Clojure parser combinator library, which is itself a port of Haskell's Parsec library.
 
